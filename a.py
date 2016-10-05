@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import random
+from utils import register
 
 app = Flask(__name__)
 
@@ -7,11 +7,13 @@ app = Flask(__name__)
 def main():     
      return render_template("box.html")
 
-@app.route("/authenticate/", methods = ['GET'])
+@app.route("/authenticate/", methods = ['POST'])
 def auth():
-        #request.form
-        #request.form['user']
-        return render_template("base.html", q = "Harambe")
+        return render_template("base.html", q = register.login(request.form["user"],request.form["password"]))
+
+@app.route("/reg/", methods = ['POST'])
+def rag():
+        return render_template("base.html", q = register.regi(request.form["user"],request.form["password"]))
 
 if __name__ =="__main__":
     app.debug=True
