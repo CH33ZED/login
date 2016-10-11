@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
   <head>
-    <h1><center><font size = '20' color='blue'>Welcome {{q}}!</font></h1>
+    <h1><center><font size = '20' color='blue'>{{q}}!</font></h1>
   </head>
   <body>
   </body>
